@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Payment Gateway Form</title>
+    <link rel="stylesheet" href="payment.css">
+    	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<header>
+    <img src="image/logo_black.png" id="logo" alt="Cryptex Logo">
+    <div id="cryptexText">Cryptex</div>
+    <div class="container">
+        <div class="left">
+            <h3>BILLING ADDRESS</h3>
+            <form id="paymentForm">
+                Full name
+                <input type="text" id="fullName" placeholder="Enter name" required>
+                Email
+                <input type="email" id="email" placeholder="Enter email" required>
+
+                Address
+                <input type="text" id="address" placeholder="Enter address">
+                
+                City
+                <input type="text" id="city" placeholder="Enter City">
+                <div id="zip">
+                    <label>
+                        State
+                        <select id="state" required>
+                            <option value="">Choose State..</option>
+                            <!-- All Indian states -->
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Assam</option>
+                            <option>Bihar</option>
+                            <option>Chhattisgarh</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Jharkhand</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Odisha</option>
+                            <option>Punjab</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                            <option>Tripura</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+                            
+                        </select>
+                    </label>
+                    <label>
+                        Pin code
+                        <input type="number" id="pinCode" placeholder="Pin code">
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <h3>PAYMENT</h3>
+            <form>
+                Accepted Card <br>
+                <img src="image/card1.png" width="100">
+                <img src="image/card2.png" width="50">
+                <br><br>
+
+                Credit card number
+                <input type="text" id="cardNumber" placeholder="Enter card number" maxlength="19">
+                
+                Expiry Date
+                <input type="month" id="expDate" required>
+                
+                <div id="zip">
+                    <label>
+                        CVV
+                        <input type="text" id="cvv" placeholder="CVV" maxlength="3" required>
+                    </label>
+                </div>
+                <input type="submit" id="checkoutBtn" value="Proceed to Checkout">
+            </form>
+        </div>
+    </div>
+    <div id="successMessage" class="success-message">
+        <img src="image/tick.png" alt="Success Tick" style="width: 20px; height: 20px; vertical-align: middle;"> 
+        Payment Successful! 
+        <a href="#" id="downloadReceipt" onclick="redirecthome()">Download Receipt</a>
+    </div>
+</header>
+
+<script src="payment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

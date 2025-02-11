@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptex - Buy & Sell Digital Assets In The cryptex</title>
+  <!-- favicon-->
+  <link rel="shortcut icon" href="assets/images/icon.png">
+
+  <!--custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+
+  <!--google font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+  <!-- #HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#home" class="logo">
+        <img src="assets/images/logo.png" width="52" height="52" alt="Cryptex logo">
+        Cryptex
+      </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link active" data-nav-link>Homepage</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#instruction" class="navbar-link" data-nav-link>Instructions</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#market" class="navbar-link" data-nav-link>Markets</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+      </nav>
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+      <a href="javascript:void(0)" class="wallet-btn" onclick="openWallet()">Wallet</a>
+      <div id="wallet-popup" class="wallet-popup">
+        <div class="wallet-content">
+          <span class="wallet-close" onclick="closeWallet()">&times;</span>
+          <div class="wallet-header">
+            <h2 id="popup-title">My Crypto Wallet</h2>
+          </div>
+          <h2 id="wallet_heading">Hello There 👋🏻</h2>
+          <div id="wallet_home">
+            <i class="bx bxs-user-circle user-icon">
+              <h3>USER</h3>
+            </i>
+            <div id="account-balance">My Account Balance:</div>
+          </div>
+
+          <div id="wallet-empty-message">No coins bought</div>
+          <div id="wallet-coins-list" style="display: none;">
+            <!-- Dynamic coin list will be inserted here -->
+          </div>
+          <!-- Success and Sold Messages (hidden initially, displayed at bottom) -->
+          <div id="success-message" class="message success-message" style="display: none;">
+            🎉Congratulations, coin bought!
+          </div>
+          <div id="sell-message" class="message sell-message" style="display: none;">
+            Coin sold!
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <article>
+
+      <!-- #HERO-->
+      <section class="section hero" aria-label="hero" data-section id="home">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="h1 hero-title">Buy & Sell Digital &nbsp;&nbsp;Assets In The <font color="#0ef">
+                &nbsp;&nbsp;&nbsp;&nbsp;Cryptex</font>
+            </h1>
+            <p class="hero-text">
+              Coin Cryptex is the easiest, safest, and fastest way to buy & sell crypto asset exchange.
+            </p>
+            <a href="#market" class="btn btn-primary">Get started now</a>
+          </div>
+          <div class="hero-banner">
+            <img src="./assets/images/hero_banner_2.png" alt="Hero Image" class="image_hero">
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ABOUT-->
+      <section class="section about" aria-label="about" data-section id="about">
+        <div class="container">
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner.png" width="748" height="436" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+          <div class="about-content">
+            <h2 class="h2 section-title">What Is <font color="#0ef">Cryptex</font>
+            </h2>
+            <p class="section-text">
+              Experience a variety of trading on Cryptex. You can use various types of coin transactions such as Buy and
+              Sell coins
+            </p>
+            <ul class="section-list">
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+                  <h3 class="h3 list-title">View real-time <font color="#0ef">cryptocurrency prices</font>
+                  </h3>
+                </div>
+                <p class="item-text">
+                  This website is a comprehensive platform designed to provide users with real-time data, insightful
+                  analysis, and user-friendly tools for tracking cryptocurrency prices. It offers live updates, charts,
+                  and trends for various digital assets, helping users make informed investment decisions.
+                </p>
+              </li>
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+                  <h3 class="h3 list-title">
+                    <font color="#0ef">Buy and sell</font> BTC, ETH, XRP, OKB, Etc...
+                  </h3>
+                </div>
+                <p class="item-text">
+                  Buy and sell a wide range of popular cryptocurrencies including BTC, ETH, XRP, OKB, and many others.
+                  Our platform provides a secure, user-friendly experience for all your trading needs. Whether you're a
+                  beginner or an expert, we offer real-time data and tools to help you make informed decisions.
+                </p>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary" id="exploreMore">Explore More</a>
+          </div>
+        </div>
+
+        <!-- Popup Modal -->
+        <div class="popup" id="popup">
+          <div class="popup-content">
+            <div id="close">
+              <span class="close-btn" id="closePopup">&times;</span>
+            </div>
+            <h2 id="heading_2">EXPLORE MORE ABOUT CRYPTEX</h2>
+            <p>
+              <br>
+            <div id="blog_container">
+              <div id="blog_content">
+                <h1 id="heading_1">
+                  <font color="#0ef">Crypto Coins</font>
+                </h1>
+                <p>Explore the dynamic world of cryptocurrency on Cryptex, offering a wide range of digital assets for
+                  trading. From major coins like Bitcoin (BTC) and Ethereum (ETH) to emerging altcoins, diversify your
+                  portfolio and discover innovative blockchain technologies. Stay informed with real-time market trends
+                  and analysis to uncover new investment opportunities.
+                </p>
+              </div>
+              <div id="blog_images">
+                <img src="./assets/images/blog_coin.png" alt="blog_coin">
+              </div>
+            </div>
+            <br>
+            <div id="blog_container">
+              <div id="blog_images">
+                <img src="./assets/images/buy_sell.png" alt="blog_coin" id="buy_sell_img">
+              </div>
+              <div id="blog_content">
+                <h1 id="heading_1">
+                  <font color="#0ef">Buy and Sell </font>
+                </h1>
+                <p id="p2">Buy and sell cryptocurrencies effortlessly on Cryptex! Our user-friendly platform lets you
+                  Buy quickly with live prices and market insights. Whether you're a beginner or seasoned Buyr,
+                  enjoy secure, reliable trading with just a few clicks.</p>
+              </div>
+            </div>
+            <br>
+            <div id="blog_container">
+              <div id="blog_content">
+                <h1 id="heading_1">
+                  <font color="#0ef">Buy Safely</font>
+                </h1>
+                <p>At Cryptex, your security is our top priority. We use advanced encryption, multi-factor
+                  authentication, and secure wallet integrations to protect your data and assets. With educational
+                  resources and market insights, you can Buy confidently, knowing your investments are safe.
+                </p>
+              </div>
+              <div id="blog_images">
+                <img src="./assets/images/safe_trading.png" alt="blog_coin" id="safe_Buy_img">
+              </div>
+            </div>
+      </section>
+
+      <!-- #INSTRUCTION-->
+
+      <section class="section instruction" aria-label="instruction" data-section id="instruction">
+        <div class="container">
+          <h2 class="h2 section-title">How It <font color="#0ef">Work</font>
+          </h2>
+          <p class="section-text">
+            Learn how our cryptocurrency platform works with simple steps to buy, sell, and manage digital assets
+            securely and efficiently.
+          </p>
+          <ul class="instruction-list">
+            <li>
+              <div class="instruction-card">
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-1.png" width="96" height="96" loading="lazy" alt="Step 1"
+                    class="img">
+                </figure>
+                <p class="card-subtitle">Step 1</p>
+                <h3 class="h3 card-title">Sign Up</h3>
+                <p class="card-text">
+                  Create your account by signing up with your email and setting up a secure password.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="instruction-card">
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-2.png" width="96" height="96" loading="lazy" alt="Step 2"
+                    class="img">
+                </figure>
+                <p class="card-subtitle">Step 2</p>
+                <h3 class="h3 card-title">Connect Wallet</h3>
+                <p class="card-text">
+                  Link your preferred crypto wallet to securely manage and Buy your digital assets.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-3.png" width="96" height="96" loading="lazy" alt="Step 3"
+                    class="img">
+                </figure>
+                <p class="card-subtitle">Step 3</p>
+                <h3 class="h3 card-title">Start Trading</h3>
+                <p class="card-text">
+                  Begin trading by selecting your preferred cryptocurrency, placing orders, and tracking market
+                  movements in real-time.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-4.png" width="96" height="96" loading="lazy" alt="Step 4"
+                    class="img">
+                </figure>
+                <p class="card-subtitle">Step 4</p>
+                <h3 class="h3 card-title">Earn Money</h3>
+                <p class="card-text">
+                  Capitalize on market opportunities by buying low and selling high to maximize your profits through
+                  strategic trading.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- #MARKET-->
+
+      <section class="section market" aria-label="market update" data-section id="market">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Market <font color="#0ef">Update</font>
+            </h2>
+          </div>
+          <table class="market-table">
+            <thead class="table-head">
+              <tr class="table-row table-title">
+                <th class="table-heading"></th>
+                <th class="table-heading" scope="col">#</th>
+                <th class="table-heading" scope="col">Name</th>
+                <th class="table-heading" scope="col">Last Price</th>
+                <th class="table-heading" scope="col">24h %</th>
+                <th class="table-heading" scope="col">Market Cap</th>
+                <th class="table-heading"></th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+
+              <!-- Bitcoin Row -->
+              <tr class="table-row" id="coin-row-bitcoin">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">1</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/coin-1.svg" width="20" height="20" alt="Bitcoin logo" class="img">
+                    <h3><button class="coin-name" onclick="openPopup2('Bitcoin')">Bitcoin</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="bitcoin-price">Loading...</td>
+                <td class="table-data last-update" id="bitcoin-change">Loading...</td>
+                <td class="table-data market-cap" id="bitcoin-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('Bitcoin','./assets/images/coin-1.svg')">Buy</button></td>
+              </tr>
+
+              <!-- Ethereum Row -->
+              <tr class="table-row" id="coin-row-ethereum">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">2</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/coin-2.svg" width="20" height="20" alt="Ethereum logo" class="img">
+                    <h3><button class="coin-name"
+                        onclick="openPopup2('Ethereum','./assets/images/coin-2.svg')">Ethereum</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="ethereum-price">Loading...</td>
+                <td class="table-data last-update" id="ethereum-change">Loading...</td>
+                <td class="table-data market-cap" id="ethereum-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('Ethereum','./assets/images/coin-2.svg')">Buy</button></td>
+              </tr>
+
+              <!-- Tether Row -->
+              <tr class="table-row" id="coin-row-tether">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">3</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/coin-3.svg" width="20" height="20" alt="Tether logo" class="img">
+                    <h3><button class="coin-name" onclick="openPopup2('Tether')">Tether</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="tether-price">Loading...</td>
+                <td class="table-data last-update" id="tether-change">Loading...</td>
+                <td class="table-data market-cap" id="tether-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('Tether','./assets/images/coin-3.svg')">Buy</button></td>
+              </tr>
+
+              <!-- Solana Row -->
+              <tr class="table-row" id="coin-row-solana">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">4</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/coin-5.svg" width="20" height="20" alt="Solana logo" class="img">
+                    <h3><button class="coin-name" onclick="openPopup2('Solana')">Solana</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="solana-price">Loading...</td>
+                <td class="table-data last-update" id="solana-change">Loading...</td>
+                <td class="table-data market-cap" id="solana-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('Solana','./assets/images/coin-5.svg')">Buy</button></td>
+              </tr>
+
+              <!-- New Row for Cardano (ADA) -->
+              <tr class="table-row" id="coin-row-cardano">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">5</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/coin-7.svg" width="20" height="20" alt="Cardano logo" class="img">
+                    <h3><button class="coin-name" onclick="openPopup2('Cardano')">Cardano</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="cardano-price">Loading...</td>
+                <td class="table-data last-update" id="cardano-change">Loading...</td>
+                <td class="table-data market-cap" id="cardano-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('Cardano','./assets/images/coin-7.svg')">Buy</button></td>
+              </tr>
+
+              <!-- New Row for Dogecoin (DOGE) -->
+              <tr class="table-row" id="coin-row-dogecoin">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">6</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/dogecoin.svg" width="20" height="20" alt="Dogecoin logo" class="img">
+                    <h3><button class="coin-name" onclick="openPopup2('Dogecoin')">Dogecoin</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="dogecoin-price">Loading...</td>
+                <td class="table-data last-update" id="dogecoin-change">Loading...</td>
+                <td class="table-data market-cap" id="dogecoin-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('Dogecoin','./assets/images/dogecoin.svg')">Buy</button></td>
+              </tr>
+
+              <!-- New Row for Avalanche (AVAX) -->
+              <tr class="table-row" id="coin-row-avalanche-2">
+                <td class="table-data">
+                  <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                    <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                  </button>
+                </td>
+                <th class="table-data rank" scope="row">7</th>
+                <td class="table-data">
+                  <div class="wrapper">
+                    <img src="./assets/images/coin-8.svg" width="20" height="20" alt="Avalanche logo" class="img">
+                    <h3><button class="coin-name" onclick="openPopup2('avalanche-2')">Avalanche</button></h3>
+                  </div>
+                </td>
+                <td class="table-data last-price" id="avalanche-2-price">Loading...</td>
+                <td class="table-data last-update" id="avalanche-2-change">Loading...</td>
+                <td class="table-data market-cap" id="avalanche-2-market-cap">Loading...</td>
+                <td class="table-data"><button class="btn btn-outline"
+                    onclick="buyCoin('avalanche-2','./assets/images/coin-8.svg')">Buy</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="popup2" style="display: none;">
+          <!-- Close button -->
+          <button id="close-popup" onclick="closePopup2()">X</button>
+
+          <div class="popup2-content">
+            <!-- Left Section -->
+            <div class="popup2-left">
+              <div class="popup2-header">
+                <img id="coin-image" alt="Coin Image" />
+                <div class="coin-info">
+                  <h2 id="coin-name">Bitcoin</h2>
+                </div>
+              </div>
+              <p id="coin-price" class="price">₹62,084</p>
+              <div class="price-change-container">
+                <h2 id="price-change">1.53% ▲</h2>
+              </div>
+              <div class="popup2-details">
+                <div><span>Market Cap</span><span id="coin-marketcap">₹12,27,50,03,26,331</span></div>
+                <div><span>Fully Diluted Valuation</span><span id="coin-fully-diluted-valuation">₹1.3Cr</span>
+                </div>
+                <div><span>Total Volume</span><span id="coin-total-volume">₹25,83,14,47,815</span></div>
+                <div><span>Low 24H</span><span id="coin-low-24h">₹60,857.00</span></div>
+                <div><span>High 24H</span><span id="coin-high-24h">₹62,451.00</span></div>
+                <div><span>Circulating Supply</span><span id="coin-circulating-supply">1,97,63,203</span></div>
+                <div><span>Max Supply</span><span id="coin-max-supply">2,10,00,000</span></div>
+              </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="popup2-right">
+              <div id="chart-container">
+                <canvas id="priceChart" width="400" height="200"></canvas>
+              </div>
+              <div class="chart-options">
+                <button onclick="updateChart('prices', 7)">Price</button>
+                <button onclick="updateChart('market_caps', 7)">Market Caps</button>
+                <button onclick="updateChart('total_volumes', 7)">Total Volumes</button>
+                <button onclick="updateChart('prices', 14)">7d</button>
+                <button onclick="updateChart('prices', 30)">30d</button>
+              </div>
+              <div class="ranking-info">
+                <div><span>Market Cap Rank:</span><span id="coin-marketcap-rank">1</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- #CONTACT-->
+      <section id="contact">
+        <div class="container">
+          <div id="details">
+            <br><br><br>
+            <a href="#" class="logo">
+              <img src="assets/images/icon.png" width="50" height="50" alt="Cryptex logo">
+              Cryptex
+            </a>
+            <h2 class="footer-title">Let's <font color="#0ef">Talk! 📢</font>
+            </h2>
+            <a href="tel:080-10297297" class="footer-contact-link"> 080-10297297</a>
+            <a href="mailto:web.wizards.2025@gmail.com" class="footer-contact-link">web.wizards.2025@gmail.com</a>
+
+            <address class="footer-contact-link">
+              100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka-560085
+            </address>
+          </div>
+          <div class="footer-brand">
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Services</p>
+              </li>
+              <li>
+                <a href="#market" class="footer-link">Buy Crypto</a>
+              </li>
+              <li>
+                <a href="#market" class="footer-link">Markets</a>
+              </li>
+              <li>
+                <a href="https://www.coingecko.com" class="footer-link" target="_blank">API</a>
+              </li>
+            </ul>
+
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Support</p>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Help Center</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Submit a request</a>
+              </li>
+            </ul>
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">About Us</p>
+              </li>
+              <li>
+                <a href="#" class="footer-link">About Cryptex</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Business Contacts</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br><br>
+        <section class="contact" id="contact">
+          <h2 class="heading">Your <font color="#0ef">Feedback</font>
+          </h2>
+          <br>
+          <form action="#">
+            <div class="input-box">
+              <input type="text" placeholder="First Name">
+              <input type="text" placeholder="Last Name">
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="Email Address">
+              <input type="text" placeholder="Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <br>
+            <input type="submit" value="Send Message" class="btn">
+          </form>
+        </section>
+
+      </section>
+
+      <!-- #FOOTER -->
+      <footer class="footer">
+        <div class="footer-bottom">
+          <div class="container">
+            <p class="copyright">
+              &copy; 2024 Cryptex All Rights Reserved by <font color="#0ef">Team Web Wizards</font>
+            </p>
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      </section>
+    </article>
+  </main>
+
+
+  <!-- custom js link-->
+  <script src="./assets/js/script.js" defer></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- ionicon link-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
